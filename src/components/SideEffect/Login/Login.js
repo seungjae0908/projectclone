@@ -1,4 +1,5 @@
 import React, {
+  useContext,
   useEffect,
   useReducer,
   useState,
@@ -6,6 +7,8 @@ import React, {
 import Card from '../../UI/Card';
 import styles from './Login.module.css';
 import Button from '../../UI/Button/Button';
+import AuthContext from '../../store/auth-context';
+import Input from '../../UI/Input/Input';
 
 // 리듀서 함수 선언
 /*
@@ -46,7 +49,8 @@ const passwordReducer = (state, action) => {
   }
 };
 
-const Login = ({ onLogin }) => {
+const Login = () => {
+  const { onLogin } = useContext(AuthContext);
   // email reducer 사용하기
   /*
     param1 - reducer function: 위에서 만든 리듀서 함수
@@ -142,9 +146,10 @@ const Login = ({ onLogin }) => {
           }`}
         >
           <label htmlFor='email'>E-Mail</label>
-          <input
+          <Input
             type='email'
             id='email'
+            label='E-mail'
             value={emailState.value}
             onChange={emailChangeHandler}
             onBlur={validateEmailHandler}
@@ -156,9 +161,10 @@ const Login = ({ onLogin }) => {
           }`}
         >
           <label htmlFor='password'>Password</label>
-          <input
+          <Input
             type='password'
             id='password'
+            label='Password'
             value={pwState.value}
             onChange={passwordChangeHandler}
             onBlur={validatePasswordHandler}
