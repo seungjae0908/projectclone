@@ -2,8 +2,10 @@ import React from 'react';
 import styles from './CartModal.module.scss';
 import Portal from '../Portal/Portal';
 
-const BackDrop = () => {
-  return <div className={styles.backdrop} />;
+const BackDrop = ({ onClose }) => {
+  return (
+    <div className={styles.backdrop} onClick={onClose} />
+  );
 };
 
 const ModalOverlay = ({ children }) => {
@@ -14,11 +16,11 @@ const ModalOverlay = ({ children }) => {
   );
 };
 
-const CartModal = ({ children }) => {
+const CartModal = ({ children, onClose }) => {
   return (
     <>
       <Portal destId='backdrop-root'>
-        <BackDrop />
+        <BackDrop onClose={onClose} />
       </Portal>
       <Portal destId='overlay-root'>
         <ModalOverlay>{children}</ModalOverlay>
