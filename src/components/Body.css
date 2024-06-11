@@ -1,0 +1,17 @@
+.Body {
+    width: 100%;
+    height: 80vh;
+    background-color: white;
+    
+}
+.boxs {
+    display: flex;
+}
+.box {
+    width: 100px;
+    height: 20vh;
+    background-color: lightblue;
+    text-align: center;
+    line-height: 20vh;
+    ;
+}
