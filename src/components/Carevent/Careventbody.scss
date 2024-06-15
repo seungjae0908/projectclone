@@ -1,0 +1,41 @@
+.careverntbody{
+    width: 70%;
+    height: auto;
+    min-height: 100vh;
+    margin: 0 auto;
+    margin-top: 2%;
+    background-color: white;
+align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.eventtitle{
+    width: 70%;
+    font-size: 20px;
+margin: 0 2%;
+margin-bottom: 1%;
+    border-bottom: 1px solid silver;
+    line-height: 2;
+
+    text-align: left;
+
+}   
+
+svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
+    overflow: visible;
+    box-sizing: content-box;
+    margin: 0 5%;
+}
+.eventsub{
+    float: right;
+    width: 20%;
+    font-size: 13px;
+}
+.eventmain{
+    float: left;
+}
+.eventcontent{
+    width: 70%;
+    background-color: white;
+
+}
